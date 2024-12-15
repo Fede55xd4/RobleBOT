@@ -125,8 +125,8 @@ global.desc2 = '' // Add long description (90 caractres max) (Este parámetro se
 global.country = '' // Add country, example: 🇪🇨
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 
-global.packname = `Redes\n\n┃ » 𝚈𝚘𝚞𝚃𝚞𝚋𝚎:\n┃ @robleuy\n┃\n┃ » 𝙸𝚗𝚜𝚝𝚊𝚐𝚛𝚊𝚖:\n┃ @robleuy\n╰━━━━━━━━•` //"RobleUY"
-global.author = `Desarrollador ✓\n ┃\n ┃ » Nombre:\n ┃ Sebastian\n ┃\n` //"RobleUY"
+global.packname = `𝗥𝗲𝗱𝗲𝘀 𝗦𝗼𝗰𝗶𝗮𝗹𝗲𝘀 👇\n┃ » 𝚈𝚘𝚞𝚃𝚞𝚋𝚎:\n┃ @robleuy\n┃\n┃ » 𝙸𝚗𝚜𝚝𝚊𝚐𝚛𝚊𝚖:\n┃ @robleuy\n╰━━━━━━━━•` //"RobleUY"
+global.author = ` 𝗗𝗲𝘀𝗮𝗿𝗿𝗼𝗹𝗹𝗮𝗱𝗼𝗿 👇\n ┃ RobleUY\n ┃\n ┃ » BOT:\n ┃ RobleBOT\n ┃\n ╰━━━━━━━━•` //"RobleUY"
 
 // • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • • •
 // [ES] > INFORMACIÓN DE VERSIONES DEL BOT, POR FAVOR 
@@ -134,7 +134,7 @@ global.author = `Desarrollador ✓\n ┃\n ┃ » Nombre:\n ┃ Sebastian\n ┃\
 // [EN] > BOT VERSION INFORMATION, PLEASE KEEP THIS UNCHANGED, WE STRIVE DAILY TO PROVIDE YOU WITH A BOT FOR THE COMMUNITY, BE GRATEFUL
 global.vs = "1.7.0"
 global.vsJB = "3.0 (Beta)"
-global.gt = "𝙂𝙖𝙩𝙖𝘽𝙤𝙩-𝙈𝘿"
+global.gt = "RobleBOT"
 
 fetchDataAndProcess().catch(error => console.error('Ocurrió un error:', error))
 
@@ -155,7 +155,7 @@ global.fallo = fg
 global.mg = '❌ 𝙀𝙍𝙍𝙊𝙍 DE USO\n\n'
 global.mal = mg
 
-global.eeg = '𝙍𝙀𝙋𝙊𝙍𝙏𝙀\n\n'
+global.eeg = '⚠️ 𝙍𝙀𝙋𝙊𝙍𝙏𝙀\n\n'
 global.envio = eeg
 
 global.eg = '💚 𝙀́𝙓𝙄𝙏𝙊\n\n'
