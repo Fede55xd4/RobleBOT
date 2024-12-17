@@ -77,6 +77,19 @@ if (!('uprank' in user)) {
         };
     }
 
+if (!isNumber(user.inversiones)) user.inversiones = 0; //cantidad de veces que invirtio el usuario
+if (!isNumber(user.inversionestotal)) user.inversionestotal = 0; //dinero que se le debe dar al usuario
+if (!isNumber(user.inversionesActivas)) user.inversionesActivas = 0; //si el usuario invirtio al menos 1 ve este numero debe ser 1 entonces debe poder usar el comando .startinversion y recibir su dinero, si es 0 entonces no.
+
+if (!isNumber(user.rol)) user.rol = 0;
+
+
+
+if (!isNumber(user.kilometros)) user.kilometros = 0;
+if (!isNumber(user.nafta)) user.nafta = 0;
+
+if (!isNumber(user.pescados)) user.pescados = 0;
+
 
 // --------------
 if (!isNumber(user.salud)) user.salud = 100;
@@ -127,8 +140,14 @@ if (!isNumber(user.rpgcristal)) user.rpgcristal = 1;
     if (!('personajes' in user)) {
         user.personajes = [];  // Creamos un array vacío para los personajes del usuario si no existe
     }
+    if (!('personajesSave' in user)) { //estos son losq  tienes bloqueados apra en casod e venderlos no se vayan
+        user.personajesSave = [];  
+    }
+    if (!('armas' in user)) {
+        user.armas = [];
 
 
+if (!isNumber(user.respeto)) user.respeto = 0;
     //////////////////
 //hachas
 if (!isNumber(user.rpghachamadera)) user.rpghachamadera = 0;
@@ -1464,7 +1483,7 @@ if (settingsREAD.autoread2) await this.readMessages([m.key])
 	    
 if (!db.data.chats[m.chat].reaction && m.isGroup) throw 0
 if (!m.fromMem && m.text.match(/(ata|des|able|izo|ido|.-.|._.|:)|:(|:v|v:|o.o|;v|v;|v':|:'v)/gi)) {
-let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "💘", "💝", "💟", "🌝", "😎", "🔥", "🖕", "🐦"])
+let emot = pickRandom(["💚"])
 this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
 function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
 }}
