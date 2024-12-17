@@ -145,7 +145,7 @@ if (!isNumber(user.rpgcristal)) user.rpgcristal = 1;
     }
     if (!('armas' in user)) {
         user.armas = [];
-
+    }
 
 if (!isNumber(user.respeto)) user.respeto = 0;
     //////////////////
