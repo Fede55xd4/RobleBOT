@@ -1,10 +1,13 @@
 let handler = async (m, { conn, usedPrefix, command, args }) => {
     let user = global.db.data.users[m.sender];
 
-
     let bang = m.key.id; //Kurt18
     let delet = m.key.participant; //Kurt18
 
+    // Safety check for m.sender
+    if (!m.sender || !m.sender.includes('@')) {
+        return m.reply('❌ Error: No valid sender ID found.', null, { contextInfo: null });
+    }
 
     if (command === 'me') {        
         if (!args[0]) {
@@ -13,10 +16,9 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
         let targetUser = m.sender;
         let message = `*@${m.sender.split('@')[0]} ${args.join(' ')}*`;
 
-
         //Kurt18 - Envia mensaje
-        await conn.sendMessage(m.chat, { text: message, mentions: [m.sender, targetUser, ...m.mentionedJid]});
-                
+        await conn.sendMessage(m.chat, { text: message, mentions: [m.sender, targetUser, ...m.mentionedJid] });
+
         //Kurt18 - elimina
         await conn.sendMessage(m.chat, {
             delete: {
@@ -36,12 +38,10 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
         }
         let targetUser = m.sender;
         let message = `*@${m.sender.split('@')[0]} dice: ${args.join(' ')}*`;
-        //return conn.reply(m.chat, message, m, m.mentionedJid ? { mentions: [m.sender, targetUser, ...m.mentionedJid] } : {});
 
-        
         //Kurt18 - Envia mensaje
-        await conn.sendMessage(m.chat, { text: message, mentions: [m.sender, targetUser, ...m.mentionedJid]});
-        
+        await conn.sendMessage(m.chat, { text: message, mentions: [m.sender, targetUser, ...m.mentionedJid] });
+
         //Kurt18 - elimina
         await conn.sendMessage(m.chat, {
             delete: {
@@ -52,8 +52,7 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
             },
         });
 
-
-
+        return;
     }
 
     if (command === 'decir') {
@@ -64,13 +63,14 @@ let handler = async (m, { conn, usedPrefix, command, args }) => {
         let targetUser = m.sender;
         let message = args.slice(1).join(' ');
 
+        // Check if mentionedUser is valid
+        if (!mentionedUser || !mentionedUser.includes('@')) {
+            return m.reply('❌ Error: Ese usuario no existe.', null, { contextInfo: null });
+        }
 
-        //await conn.reply(m.chat, `*@${mentionedUser.split('@')[0]} el usuario @${m.sender.split('@')[0]} te dijo: ${message}*`, null, { mentions: [mentionedUser, targetUser, ...m.mentionedJid] });
-
-        
         //Kurt18 - Envia mensaje
-        await conn.sendMessage(m.chat, { text: `*@${mentionedUser.split('@')[0]} el usuario @${m.sender.split('@')[0]} te dijo: ${message}*`, mentions: [m.sender, targetUser, ...m.mentionedJid]});
-        
+        await conn.sendMessage(m.chat, { text: `*@${mentionedUser.split('@')[0]} el usuario @${m.sender.split('@')[0]} te dijo: ${message}*`, mentions: [m.sender, targetUser, ...m.mentionedJid] });
+
         //Kurt18 - elimina
         await conn.sendMessage(m.chat, {
             delete: {
