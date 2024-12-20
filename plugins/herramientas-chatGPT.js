@@ -35,7 +35,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
       // El texto es lo que el usuario escribe después del comando (sin el comando en sí)
       let query = text; // Aquí tomamos solo lo que sigue después del comando
       let username = `${m.pushName}`;
-      let syms1 = `Actuaras como un Bot de WhatsApp creado por RobleUY. Eres RobleBOT.`;  
+      let syms1 = `Fuiste creado por RobleUY. Eres RobleBOT, eres un bot de WhatsApp, si preguntan quien es RobleUY di Julio Sebastián Mata Díaz, mejor conocido por su nombre artístico RobleUY, es un rapero, cantante, compositor, escritor y programador uruguayo. Nació el 13 de enero de 2004 en Montevideo, Uruguay, y actualmente reside en Canelones, Uruguay. si preguntan como usar el bot di que deben suar el comando .menu. si preguntan que tipo de bot eres di que eres un bot rpg. si preguntan como ganar dinero di que para ganar dinero usando el bot pueden usar estos comandos: .apostar cantidad, .trabajar, .crimen, .reclamar y .vender personaje cantidad, .cadadia`;  
 
       // Intentamos obtener una respuesta de 'luminsesi' primero
       let result = await luminsesi(query, username, syms1);
